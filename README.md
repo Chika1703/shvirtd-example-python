@@ -26,7 +26,7 @@ See 'snap info docker' for additional versions.
 2. Убедитесь что у вас УСТАНОВЛЕН ```docker compose```(без тире) версии не менее v2.24.X, для это выполните команду ```docker compose version```  
 
 ## Решение 0
-![image 5](image/5.jpg)
+![image 5](images/5.jpg)
 
 
 
@@ -44,7 +44,8 @@ See 'snap info docker' for additional versions.
 ---
 
 ## Решение 1
-task 1 1
+![image 1_1](images/task_1_1.jpg)
+
 
 ### ВНИМАНИЕ!
 !!! В процессе последующего выполнения ДЗ НЕ изменяйте содержимое файлов в fork-репозитории! Ваша задача ДОБАВИТЬ 5 файлов: ```Dockerfile.python```, ```compose.yaml```, ```.gitignore```, ```.dockerignore```,```bash-скрипт```. Если вам понадобилось внести иные изменения в проект - вы что-то делаете неверно!
