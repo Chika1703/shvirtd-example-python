@@ -75,7 +75,7 @@ See 'snap info docker' for additional versions.
 6. Остановите проект. В качестве ответа приложите скриншот sql-запроса.
 
 ##Решение 3
-3 img
+![image1](images/3.jpg)
 
 ## Задача 4
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
@@ -87,7 +87,7 @@ See 'snap info docker' for additional versions.
 
 ## Решение 4
 
-4
+![image1](images/4.jpg)
 
 ## Задача 5 (*)
 1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
@@ -104,7 +104,7 @@ See 'snap info docker' for additional versions.
 Предоставьте скриншоты  действий .
 
 ## Решение 6-6.1
-1
+![image1](images/1.jpg)
 
 ## Задача 6.2 (**)
 Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
