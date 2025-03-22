@@ -75,7 +75,7 @@ See 'snap info docker' for additional versions.
 
 6. Остановите проект. В качестве ответа приложите скриншот sql-запроса.
 
-##Решение 3
+## Решение 3
 Создан [compose.yml](compose.yml) соответствующими сервисами.
 ![image1](images/3.jpg)
 
