@@ -44,7 +44,7 @@ See 'snap info docker' for additional versions.
 ---
 
 ## Решение 1
-![image 1_1](images/task_1_1.jpg)
+![image1](images/Task_1_1.jpg)
 
 
 ### ВНИМАНИЕ!
