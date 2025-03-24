@@ -103,6 +103,7 @@ See 'snap info docker' for additional versions.
 
 ## решение 6 
 команда dive не работала, только если запускалась через docker 
+
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
 Предоставьте скриншоты  действий .
@@ -113,9 +114,24 @@ See 'snap info docker' for additional versions.
 ## Задача 6.2 (**)
 Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
 
+## Решение 6.2 
+Создаем Dockerfile 
+```
+FROM hashicorp/terraform:latest as source 
+FROM alpine
+COPY --from=source /bin/terraform /terraform
+ENTRYPOINT ["cp", "/terraform", "/output/"]
+```
+после чего выполняем команды на хосте
+```
+mkdir output
+docker build -t terraform-extractor .
+docker run --rm -v $(pwd)/output:/output terraform-extractor
+```
 
-
+в теории должно работать, но я не проверял. легче всего будет выполнять через docker cp
 
 ## Обьяснение к 6 заданию
 
-файл не ищет не при каких условиях, пробовал загружать разные версии docker и dive? так же пробовал проверить на другом образе (взял nginx), но не помогало. Тогда решил попробовать через сам docker запустить dive ```docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest hashicorp/terraform:latest``` такой командой, dive запустился ![image1](images/1.jpg)
+Файл не ищет ни при каких условиях, пробовал загружать разные версии Docker и Dive? Также пробовал проверить на другом образе (взял nginx), но не помогало. Тогда решил попробовать через сам Docker запустить Dive: ```docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest hashicorp/terraform:latest``` Такой командой Dive запустился. ![image1](images/photo_2025-03-24_20-07-13.jpg). Как я понял, нашел слой (e73185899fa9564220a9898462e9e0f56525194893d3100a806614ed98a40951)
+и начал его распаковывать. ![image1](images/photo_2025-03-24_20-23-13.jpg), но ничего не вышло, и вылезли ошибки по типу «такого файла нет или он не найден». Я также пробовал всё выполнять не через root, на устройстве без подключения SSH и без VS Code, просто в терминале. Ничего не вышло. Также я после сдачи ДЗ почитал про еще один способ извлечения файла из контейнера, объяснил в решении 6.2. 
