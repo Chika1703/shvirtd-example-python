@@ -112,3 +112,10 @@ See 'snap info docker' for additional versions.
 
 ## Задача 6.2 (**)
 Предложите способ извлечь файл из контейнера, используя только команду docker build и любой Dockerfile.  
+
+
+
+
+## Обьяснение к 6 заданию
+
+файл не ищет не при каких условиях, пробовал загружать разные версии docker и dive? так же пробовал проверить на другом образе (взял nginx), но не помогало. Тогда решил попробовать через сам docker запустить dive ```docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest hashicorp/terraform:latest``` такой командой, dive запустился ![image1](images/1.jpg)
